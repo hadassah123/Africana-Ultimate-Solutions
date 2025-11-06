@@ -57,12 +57,23 @@ body{
 }
 
 .logo{
-  width:56px;
-  height:56px;
+  width:72px; /* larger by default for better visibility */
+  height:72px;
   object-fit:contain;
-  border-radius:10px;
-  background:var(--muted);
-  padding:6px;
+  border-radius:8px;
+  background:transparent; /* remove inner background so image fills space visually */
+  padding:2px; /* keep minimal padding to avoid clipping */
+}
+
+/* Ensure logo image centers and doesn't stretch or shrink unexpectedly */
+.brand .logo{
+  display:block;
+  object-position:center center;
+  flex-shrink:0; /* don't shrink the logo inside the flex header */
+}
+
+@media (max-width:480px){
+  .logo{ width:56px; height:56px; padding:2px; }
 }
 
 /* Small brand text next to logo */
@@ -516,7 +527,8 @@ body{
     display: flex;
     flex-direction: column;
     height: auto;
-    gap: 20px;
+    gap: 18px;
+    margin: 10px auto; /* reduce the large desktop margin so title & image are closer on mobile */
   }
 
   .service-card {
@@ -1067,4 +1079,186 @@ body{
 .contact-form .form-row .form-group {
   flex: 1;
   margin-bottom: 0;
+}
+
+
+/* ===== Footer Section ===== */
+.footer {
+  background-color: #2b7238;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Top Section: Logo + Links === */
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo img {
+  width: 70px;
+  height: auto;
+}
+
+.footer-logo h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f5b841;
+}
+
+/* Divider */
+.footer-divider {
+  border: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 30px 0;
+}
+
+/* === Newsletter Section === */
+.footer-newsletter h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+.newsletter-form input::placeholder {
+  color: #bfbfbf;
+}
+
+.newsletter-form button {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 1.2rem;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  color: #f5b841;
+}
+
+/* === Bottom Section === */
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  /* Keep newsletter input and button side-by-side on most phones */
+  .newsletter-form {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    border-radius: 8px;
+    min-width: 0; /* prevents overflow in flex */
+  }
+
+  .newsletter-form button {
+    width: auto;
+    border-radius: 8px;
+    padding: 10px 16px;
+    background-color: #fff; /* stays white, not yellow */
+    color: #000;
+    flex: 0 0 auto;
+  }
+}
+
+/* On very small screens stack the newsletter controls again for readability */
+@media (max-width: 420px) {
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter-form input {
+    width: 100%;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+    padding: 10px 0;
+  }
 }
