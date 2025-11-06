@@ -693,6 +693,55 @@ body{
   margin: 50px;
 }
 
+/* Responsive adjustments for testimonials */
+@media (max-width: 1100px) {
+  .testimonial-text h3 {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 900px) {
+  .testimonial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .testimonial-text {
+    width: 100%;
+    min-width: auto;
+    text-align: center;
+    order: 1;
+    padding: 0 12px;
+  }
+
+  .testimonial-text h3 {
+    font-size: 36px;
+    line-height: 1.05;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    min-width: auto;
+    margin: 0; /* remove large offset margins on mobile */
+    padding: 22px;
+    text-align: left;
+    order: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-text h3 {
+    font-size: 28px;
+  }
+
+  .testimonial-card {
+    padding: 16px;
+  }
+}
+
 .client-img {
   width: 60px;
   height: 60px;
