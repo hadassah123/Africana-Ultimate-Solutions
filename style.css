@@ -1805,3 +1805,17 @@ body{
     font-size: 0.95rem;
   }
 }
+
+/*========= BLOG SECTION =======*/
+.blog-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  /* place the background image more to the right so content sits on a solid left block */
+  background: url("assets/1B2A9246.jpg") right center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
