@@ -164,6 +164,11 @@ body{
 .hamburger::before{ top:-8px }
 .hamburger::after{ top:8px }
 
+/* hamburger -> X when open */
+.nav-toggle.is-open .hamburger{ background: transparent }
+.nav-toggle.is-open .hamburger::before{ transform: translateY(8px) rotate(45deg); }
+.nav-toggle.is-open .hamburger::after{ transform: translateY(-8px) rotate(-45deg); }
+
 /* ---------- Mobile menu ---------- */
 .mobile-menu{
   display:none;
@@ -172,7 +177,7 @@ body{
 }
 .mobile-menu nav{ padding:16px 20px; }
 .mobile-menu ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px }
-.mobile-menu a{ text-decoration:none; color:var(--dark); font-weight:600; padding:8px 4px; display:inline-block }
+.mobile-menu a{ text-decoration:none; color:var(--dark); font-weight:500; padding:8px 4px; display:inline-block }
 .mobile-cta{ margin-top:12px; width:100%; text-align:center }
 
 /* ---------- Responsive ---------- */
@@ -1260,5 +1265,123 @@ body{
   .newsletter-form button {
     width: 100%;
     padding: 10px 0;
+  }
+}
+/* ===== ABOUT HERO SECTION ===== */
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  /* place the background image more to the right so content sits on a solid left block */
+  background: url("assets/1B2A9263.jpg") right center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* solid left-side block (no opacity) behind the text */
+.about-hero::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /* increase coverage to show more green, and delay the fade toward the right */
+  width: 72%;
+  background: linear-gradient(90deg,
+    rgba(43,114,56,1) 0%,
+    rgba(43,114,56,1) 60%,
+    rgba(43,114,56,0.9) 75%,
+    rgba(43,114,56,0.55) 88%,
+    rgba(43,114,56,0.15) 96%,
+    rgba(43,114,56,0) 100%
+  );
+  z-index: 1;
+}
+
+.about-hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: transparent; /* overlay removed; using solid ::before instead */
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero-text {
+  max-width: 1000px;
+  color: #fff;
+  padding-left: 8%;
+  position: relative;
+  z-index: 3;
+}
+
+.about-hero-text h1 {
+  font-size: 5.5rem; /* bigger text */
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.about-hero-text h1 span {
+  color: #f5b841; /* Africana yellow */
+}
+
+.about-hero-text p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-hero {
+    height: 60vh;
+  }
+
+  /* hide the solid left block on small screens */
+  /* hide the large gradient block, but add a gradient green overlay over the image for contrast */
+  .about-hero::before{ display:none; }
+
+  .about-hero-overlay {
+    /* gradient overlay left -> right to keep the image slightly visible on the right */
+    background: linear-gradient(90deg,
+      rgba(43,114,56,0.95) 0%,
+      rgba(43,114,56,0.85) 30%,
+      rgba(43,114,56,0.6) 60%,
+      rgba(43,114,56,0.25) 85%,
+      rgba(43,114,56,0.08) 100%
+    );
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+  }
+
+  .about-hero-text {
+    padding-left: 5%;
+    color: #ffffff; /* white text on the green overlay for readability */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    /* Apply Plus Jakarta Sans to mobile hero text for a cleaner look */
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  .about-hero-text h1 {
+    font-size: 2.2rem;
+    /* use Plus Jakarta Sans for headings on mobile too for consistency */
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-weight: 700;
+  }
+
+  .about-hero-text p {
+    font-size: 1rem;
+    font-weight: 400;
   }
 }
