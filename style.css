@@ -384,6 +384,7 @@ body{
   width: 100%;
   border-radius: 10px;
 }
+/* Our Story styles moved earlier (next to About section) to avoid duplication */
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   .about-content {
@@ -1383,5 +1384,424 @@ body{
   .about-hero-text p {
     font-size: 1rem;
     font-weight: 400;
+  }
+}
+
+/* ===== OUR STORY SECTION ===== */
+.our-story {
+  background-color: #ffffff; /* ensure the section background is white */
+  padding: 80px 10%;
+  font-family: 'Poppins', sans-serif;
+  color: #210c0d;
+}
+
+.our-story .section-title {
+  color: var(--green);
+  margin: 0 auto 40px;
+  display: block; /* make it block-level so auto margins center it */
+  text-align: center;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* ensure the section container centers inline children like underline when necessary */
+.our-story { text-align: center; }
+
+.story-container {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.story-image {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(43,114,56,0.12);
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-content {
+  flex: 1;
+}
+
+.story-content p {
+  text-align: justify;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #333;
+}
+
+.story-content .btn{
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Mobile: stack and reduce circular image size */
+@media (max-width: 900px) {
+  .story-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .story-image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .story-content p {
+    text-align: left; /* keep readable left-aligned paragraphs on mobile */
+    padding: 0 12px;
+  }
+}
+
+/* ===== CORE VALUES SECTION (Image + Vision/Mission) ===== */
+.core-values {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.core-image {
+  background: #fff;
+  border-radius: 25px;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto -3rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  z-index: 2;
+  position: relative;
+}
+
+.core-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Vision and Mission Section */
+.vision-mission {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+  background: #2b7238;
+  color: #fff;
+  border-radius: 25px;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+}
+
+.vision-mission div {
+  flex: 1 1 300px;
+  padding: 1.5rem;
+}
+
+.vision-mission h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.vision-mission p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .vision-mission {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ===== MEMBER BENEFITS SECTION ===== */
+.member-benefits {
+  background-color: #2b7238;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+
+
+.benefits-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background-color: #fff;
+  color: #000;
+  border-radius: 15px;
+  padding: 2rem;
+  flex: 1 1 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.benefit-card i {
+  font-size: 2rem;
+  color: #2b7238;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.benefit-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .benefits-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-card {
+    max-width: 90%;
+  }
+}
+
+/* ===== PARTNER ORGANIZATIONS SECTION ===== */
+.partners-section {
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.partners-section h2 {
+  color: #2b7238;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12rem; /* wider spacing between partner logos */
+}
+
+.partners-logos img {
+  width: 80px; /* smaller logos */
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+  filter: none; /* show full color */
+  opacity: 1;
+}
+
+.partners-logos img:hover {
+  transform: scale(1.06);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .partners-logos {
+    gap: 3rem;
+  }
+
+  .partners-logos img {
+    width: 60px;
+  }
+}
+
+/* ===== TEAM SECTION ===== */
+.team-section {
+  padding: 80px 10%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.team-section .section-title {
+  color: #2b7238;
+  margin-bottom: 20px;
+}
+
+.team-intro {
+  color: #333;
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 300px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.team-card img {
+  width: 100%;
+  border-radius: 12px;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-card h3 {
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.team-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.team-socials a {
+  color: #2b7238;
+  font-size: 1rem;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.team-socials a:hover {
+  color: #f5b841;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-card {
+    width: 90%;
+  }
+}
+
+/* ===== LET’S WORK TOGETHER SECTION ===== */
+.work-together {
+  background-color: #ebebeb; /* section background requested */
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-box {
+  background: #fff; /* inner background remains white */
+  max-width: 900px;
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border: 23px solid var(--green); /* bold green border */
+}
+
+.work-box h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 1.5rem;
+}
+
+.work-box p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.contact-btn {
+  display: inline-block;
+  background-color: #2b7238;
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 50px;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-btn:hover {
+  background-color: #24622e;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .work-box {
+    margin: 0 20px;
+    padding: 50px 25px;
+  }
+
+  .work-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .work-box p {
+    font-size: 0.95rem;
   }
 }
