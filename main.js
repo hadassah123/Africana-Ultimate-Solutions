@@ -118,3 +118,47 @@ if (navToggle && mobileMenu) {
     if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
   });
 }
+
+  // -----------------------------
+  // Scroll-to-top button
+  // -----------------------------
+  // Create button element and append to body
+  const scrollBtn = document.createElement('button');
+  scrollBtn.className = 'scroll-top';
+  scrollBtn.setAttribute('aria-label', 'Scroll to top');
+  scrollBtn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+  document.body.appendChild(scrollBtn);
+
+  // Show when scrolled down a bit
+  function handleScroll() {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+
+  // Smooth scroll to top (header/nav) when clicked
+  scrollBtn.addEventListener('click', () => {
+    const header = document.querySelector('.site-header');
+    if (header) {
+      header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // move focus to the header for accessibility
+      header.setAttribute('tabindex', '-1');
+      header.focus();
+      // remove tabindex after focus to keep DOM clean
+      setTimeout(() => header.removeAttribute('tabindex'), 1000);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  });
+
+  // Allow keyboard activation
+  scrollBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      scrollBtn.click();
+    }
+  });

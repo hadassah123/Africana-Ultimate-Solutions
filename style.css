@@ -311,6 +311,38 @@ body{
   }
 }
 
+/* ===== Scroll-to-top button ===== */
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(43,114,56,0.2);
+  z-index: 9999;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+}
+.scroll-top.visible{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.scroll-top:focus{
+  box-shadow: 0 0 0 4px rgba(43,114,56,0.18);
+}
+.scroll-top i{ font-size: 18px }
 /* ===== About Section ===== */
 .about {
   background-color: #2b7238;
@@ -1807,15 +1839,181 @@ body{
 }
 
 /*========= BLOG SECTION =======*/
-.blog-hero {
-  position: relative;
-  width: 100%;
-  height: 75vh;
-  /* place the background image more to the right so content sits on a solid left block */
-  background: url("assets/1B2A9246.jpg") right center/cover no-repeat;
+/* ===== BLOG HIGHLIGHT SECTION ===== */
+.blog-highlight {
+  padding: 50px 10%;
+  background-color: #fff;
+}
+
+.blog-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
 }
+
+.blog-image img {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.blog-content h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #2b7238;
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.blog-content .date {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.blog-content .description {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.read-more-btn {
+  display: inline-block;
+  background-color: #2b7238;
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #25612f;
+  transform: translateY(-2px);
+}
+.blog-category {
+  display: inline-block;
+  color:var(--yellow-1);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .blog-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .blog-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .blog-image img {
+    max-width: 100%;
+  }
+}
+
+.blog-grid {
+  background-color: #f9f9f9;
+  padding: 100px 10%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.blog-grid .section-title {
+  color: #2b7238;
+}
+
+.blog-grid-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  width: 30%;
+  min-width: 280px;
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.blog-card-content {
+  padding: 20px;
+}
+
+.blog-card-content h3 {
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+.blog-card-content p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.read-more-link {
+  color: #2b7238;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #f5b841;
+}
+@media (max-width: 768px) {
+  .blog-grid-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card {
+    width: 90%;
+  }
+
+  .blog-card img {
+    height: 200px;
+  }
+}
+
