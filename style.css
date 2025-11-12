@@ -2017,3 +2017,20 @@ body{
   }
 }
 
+.contact-hero {
+  /* place the background image more to the right so content sits on a solid left block */
+  background: url("assets/1B2A9246.jpg") right center/cover no-repeat;
+}
+.blog-hero {
+  /* place the background image more to the right so content sits on a solid left block */
+  background: url("assets/1B2A9263.jpg") right center/cover no-repeat;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1)
+}
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Blogs</title>
+    <title>Contact Us</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Plus Jakarta Sans for smaller text on mobile in the about hero -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
     <link rel="icon" href="assets/Africana (1).png" type="image/png">
 </head>
 <body>
-  <!-- ====== NAVIGATION BAR ====== -->
+    <!-- ====== NAVIGATION BAR ====== -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
@@ -62,78 +62,84 @@
     </div>
   </header>
 
-
-<!-- ===== blog Hero Section ===== -->
-<section class="about-hero blog-hero">
+  <section class="about-hero contact-hero">
   <div class="about-hero-overlay">
     <div class="about-hero-text">
-      <h1>Our <span>Blogs</span></h1>
+      <h1>Contact <span>Us</span></h1>
       <p>
-        Insights, stories, and thought leadership from Africana Ultimate Solutions — empowering educators, transforming learning.
+        Get in touch with Africana Ultimate Solutions. We’d love to hear from you — whether you’re an educator, parent, or organization ready to grow.
       </p>
     </div>
   </div>
 </section>
 
-<section class="blog-highlight">
-  <div class="blog-container">
-    <div class="blog-image">
-      <img src="assets/download.jpg" alt="Reimagining Education in the Digital Age">
+
+<!-- ===== GET IN TOUCH / CONTACT ===== -->
+<section id="contact" class="contact">
+  <div class="container">
+    <h2 class="section-title">Get in Touch</h2>
+
+    <div class="contact-grid">
+      <!-- Left: contact form -->
+      <div class="contact-form">
+  <form id="contactForm" action="#" method="post" novalidate>
+    <div class="form-group">
+      <label for="fullname">Full Name</label>
+      <input type="text" name="fullname" id="fullname" placeholder="e.g Jane Doe" required />
     </div>
 
-    <div class="blog-content">
-      <span class="blog-category">Education</span>
-      <h2>REIMAGINING EDUCATION<br>IN THE DIGITAL AGE</h2>
-      <p class="date">17th October, 2025</p>
-      <p class="description">
-        Discover how technology is reshaping classrooms and empowering teachers 
-        to lead transformative learning experiences across Africa.
-      </p>
-      <a href="#" class="read-more-btn">Read More</a>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="e.g janedoe@gmail.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="phone" id="phone" placeholder="e.g +234 xxxx xxx" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" name="subject" id="subject" placeholder="e.g Personal Training" />
+    </div>
+
+    <div class="form-group">
+      <label for="message">Your Message</label>
+      <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-solid" id="sendBtn">Send Message</button>
+  </form>
+</div>
+      <!-- Right: contact details -->
+      <aside class="contact-card" aria-labelledby="contact-info">
+        <h3 id="contact-info" style="margin-top:0;">Address:</h3>
+        <p>Abuja, FCT, Nigeria</p>
+
+        <h3 style="margin-top:22px;">Call Us:</h3>
+        <p><a href="tel:+2347043018282" style="color:inherit; text-decoration:underline;">+234 704 301 8282</a></p>
+
+        <h3 style="margin-top:22px;">Email Us:</h3>
+        <p><a href="mailto:info@africanaultimate.com" style="color:inherit; text-decoration:underline;">info@africanaultimate.com</a></p>
+
+        <h3 style="margin-top:22px;">Follow Us:</h3>
+        <p class="social-icons" style="margin-top:8px;">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram" style="margin-left:10px;"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn" style="margin-left:10px;"><i class="fa-brands fa-linkedin-in"></i></a>
+        </p>
+      </aside>
     </div>
   </div>
 </section>
 
-<section class="blog-grid">
-  <h2 class="section-title">Latest Blog Posts</h2>
-  <div class="blog-grid-container">
-    
-    <!-- Blog Card 1 -->
-    <div class="blog-card">
-      <img src="assets/1B2A8080.jpg" alt="Blog post">
-      <div class="blog-card-content">
-        <span class="blog-category">Innovation</span>
-        <h3>Building 21st Century Classrooms Through Digital Tools</h3>
-        <p>Explore how schools can integrate technology to promote creativity, collaboration, and critical thinking.</p>
-        <a href="#" class="read-more-link">Read More</a>
-      </div>
-    </div>
+<section class="find-us">
+  <h2 class="section-title">FIND <span>US</span></h2>
 
-    <!-- Blog Card 2 -->
-    <div class="blog-card">
-      <img src="assets/1B2A8989.jpg" alt="Blog post">
-      <div class="blog-card-content">
-        <span class="blog-category">Leadership</span>
-        <h3>Empowering Educators for Sustainable Growth</h3>
-        <p>Discover strategies for professional development and leadership in education across Africa.</p>
-        <a href="#" class="read-more-link">Read More</a>
-      </div>
-    </div>
-
-    <!-- Blog Card 3 -->
-    <div class="blog-card">
-      <img src="assets/1B2A8994.jpg" alt="Blog post">
-      <div class="blog-card-content">
-        <span class="blog-category">Training</span>
-        <h3>Redefining Teacher Training for Modern Education</h3>
-        <p>Learn how innovation and collaboration are transforming teacher training programs globally.</p>
-        <a href="#" class="read-more-link">Read More</a>
-      </div>
-    </div>
-
-  </div>
+  <div id="map"></div>
 </section>
-
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
@@ -176,6 +182,26 @@
   </div>
 </footer>
 
+
+
 <script src="main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
+
+<script>
+  // Initialize map
+  const map = L.map('map').setView([9.0579, 7.4951], 13);
+
+  // Add tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Add marker
+  L.marker([9.0579, 7.4951]).addTo(map)
+    .bindPopup('<b>Africana Ultimate Solutions</b><br>Abuja, Nigeria')
+    .openPopup();
+</script>
+
 </body>
 </html>
