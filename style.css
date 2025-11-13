@@ -2034,3 +2034,214 @@ body{
   box-shadow: 0 4px 20px rgba(0,0,0,0.1)
 }
 
+/* --- WHAT WE OFFER SECTION --- */
+.what-we-offer {
+  padding: 100px 10%;
+  text-align: center;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.what-we-offer .section-title {
+  color: #2b7238;
+}
+
+.what-we-offer .section-title span {
+  color: #f5b841;
+}
+
+.offer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.offer-card {
+  background-color: #2b7238;
+  color: #fff;
+  border-radius: 15px;
+  padding: 50px 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.offer-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 20px;
+}
+
+.offer-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.offer-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  .what-we-offer {
+    padding: 70px 8%;
+  }
+
+  .offer-card {
+    padding: 40px 25px;
+  }
+
+  .offer-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* --- Upcoming Events --- */
+.upcoming-events {
+  background-color: #fff;
+  padding: 80px 10%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.upcoming-events .section-title {
+  color: #2b7238;
+  margin-bottom: 10px;
+}
+
+.upcoming-events .section-title span {
+  color: #f5b841;
+}
+
+.upcoming-events .section-subtitle {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.event-card {
+  background: #ebebeb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.event-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 25px;
+}
+
+.event-content h3 {
+  color: #2b7238;
+  margin-bottom: 10px;
+}
+
+.event-content p {
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.event-card .btn {
+  background: #2b7238;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.event-card .btn:hover {
+  background: #f5b841;
+  color: #000;
+}
+
+/* --- Specialized Programs --- */
+.specialized-programs {
+  background-color: #EBEBEB;
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.specialized-programs .section-title {
+  color: #2b7238;
+  margin-bottom: 10px;
+}
+
+.specialized-programs .section-title span {
+  color: #f5b841;
+}
+
+.specialized-programs .section-subtitle {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.programs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.program-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.program-card img {
+  width: 100%;
+  height: 230px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.program-card h3 {
+  color: #2b7238;
+  margin-bottom: 10px;
+}
+
+.program-card p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.program-card .btn {
+  background: #2b7238;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.program-card .btn:hover {
+  background: #f5b841;
+  color: #000;
+}

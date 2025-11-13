@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Plus Jakarta Sans for smaller text on mobile in the about hero -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- favicon for browser tabs -->
+    <link rel="icon" href="assets/Africana (1).png" type="image/png">
+</head>
+</head>
+<body>
+    <!-- ====== NAVIGATION BAR ====== -->
+    <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <!-- Replace with your actual logo image -->
+        <img src="assets/Africana (1).png" alt="Africana Ultimate Solutions logo" class="logo" />
+        <span class="brand-text">
+          <strong>Africana Ultimate</strong><br/><small>Solutions</small>
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <div class="header-cta">
+        <a href="#book" class="btn btn-outline">Book a Consultation</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button class="nav-toggle" id="navToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu (hidden on desktop) -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <nav>
+        <ul>
+          <li><a href="index.html" class="mobile-link">Home</a></li>
+          <li><a href="about.html" class="mobile-link">About</a></li>
+          <li><a href="#services" class="mobile-link">Services</a></li>
+          <li><a href="blog.html" class="mobile-link">Blog</a></li>
+          <li><a href="contact.html" class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="#book" class="btn btn-solid mobile-cta">Book a Consultation</a>
+      </nav>
+    </div>
+    </header>
+
+    <section class="about-hero services-hero">
+    <div class="about-hero-overlay">
+    <div class="about-hero-text">
+      <h1>Our <span>Services</span></h1>
+      <p>
+        At Africana Ultimate Solutions, we offer tailored consultancy, training, and digital transformation services designed to empower educators and organizations.
+      </p>
+    </div>
+    </div>
+    </section>
+
+    <!-- WHAT WE OFFER SECTION -->
+    <section class="what-we-offer" id="services">
+    <h2 class="section-title">WHAT WE OFFER</h2>
+
+    <div class="offer-container">
+        <div class="offer-card">
+        <img src="assets/interview (1).png" alt="Educational Consulting Icon" class="offer-icon">
+        <h3>Educational Consulting</h3>
+        <p>We help schools and educators implement modern learning models and digital strategies to improve teaching outcomes.</p>
+        </div>
+
+        <div class="offer-card">
+        <img src="assets/technology (1).png" alt="Tech Integration and Training Icon" class="offer-icon">
+        <h3>Tech Integration & Training</h3>
+        <p>We provide digital literacy programs, workshops, and hands-on training to enhance educators’ technological capabilities.</p>
+        </div>
+
+        <div class="offer-card">
+        <img src="assets/organizational (2).png" alt="Organizational Development Icon" class="offer-icon">
+        <h3>Organizational Development</h3>
+        <p>We collaborate with educational institutions to build stronger systems, leadership, and workplace culture for sustained growth.</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section class="upcoming-events">
+    <h2 class="section-title">UPCOMING EVENTS</h2>
+    <p class="section-subtitle">Stay updated on our workshops, conferences, and leadership forums.</p>
+
+    <div class="events-container">
+        <div class="event-card">
+        <img src="images/event1.jpg" alt="Education Conference">
+        <div class="event-content">
+            <h3>Reimagining Education in the Digital Age</h3>
+            <p><strong>Date:</strong> October 17, 2025</p>
+            <p>Discover how technology is reshaping classrooms and empowering teachers across Africa.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        </div>
+
+        <div class="event-card">
+        <img src="images/event2.jpg" alt="Teacher Training Workshop">
+        <div class="event-content">
+            <h3>Leadership Forum for Educators</h3>
+            <p><strong>Date:</strong> November 5, 2025</p>
+            <p>A transformative workshop for school leaders and administrators to share innovation strategies.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Specialized Programs Section -->
+    <section class="specialized-programs">
+    <h2 class="section-title">SPECIALIZED PROGRAMS</h2>
+    <p class="section-subtitle">We offer tailored programs that empower educators and institutions.</p>
+
+    <div class="programs-container">
+        <div class="program-card">
+        <img src="images/mentoring.jpg" alt="Mentoring Program">
+        <h3>Mentorship Sessions</h3>
+        <p>Personalized guidance and career mentorship for educators looking to expand their impact.</p>
+        <a href="#" class="btn">Join Now</a>
+        </div>
+
+        <div class="program-card">
+        <img src="images/training.jpg" alt="Teacher Training">
+        <h3>Teacher Trainings</h3>
+        <p>In-school teacher training programs that focus on digital integration and effective classroom strategies.</p>
+        <a href="#" class="btn">Register</a>
+        </div>
+
+        <div class="program-card">
+        <img src="images/partnership.jpg" alt="School Partnership">
+        <h3>School Partnerships</h3>
+        <p>Collaborative initiatives with schools to build systems that promote innovation and growth.</p>
+        <a href="#" class="btn">Learn More</a>
+        </div>
+    </div>
+    </section>
+
+    <!-- ===== GET IN TOUCH / CONTACT ===== -->
+    <section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+
+        <div class="contact-grid">
+        <!-- Left: contact form -->
+        <div class="contact-form">
+    <form id="contactForm" action="#" method="post" novalidate>
+        <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" name="fullname" id="fullname" placeholder="e.g Jane Doe" required />
+        </div>
+
+        <div class="form-row">
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="e.g janedoe@gmail.com" required />
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="phone" id="phone" placeholder="e.g +234 xxxx xxx" />
+        </div>
+        </div>
+
+        <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject" placeholder="e.g Personal Training" />
+        </div>
+
+        <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea name="message" id="message" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-solid" id="sendBtn">Send Message</button>
+    </form>
+    </div>
+        <!-- Right: contact details -->
+        <aside class="contact-card" aria-labelledby="contact-info">
+            <h3 id="contact-info" style="margin-top:0;">Address:</h3>
+            <p>Abuja, FCT, Nigeria</p>
+
+            <h3 style="margin-top:22px;">Call Us:</h3>
+            <p><a href="tel:+2347043018282" style="color:inherit; text-decoration:underline;">+234 704 301 8282</a></p>
+
+            <h3 style="margin-top:22px;">Email Us:</h3>
+            <p><a href="mailto:info@africanaultimate.com" style="color:inherit; text-decoration:underline;">info@africanaultimate.com</a></p>
+
+            <h3 style="margin-top:22px;">Follow Us:</h3>
+            <p class="social-icons" style="margin-top:8px;">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram" style="margin-left:10px;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn" style="margin-left:10px;"><i class="fa-brands fa-linkedin-in"></i></a>
+            </p>
+        </aside>
+        </div>
+    </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+    <div class="footer-container">
+
+        <!-- Top Section: Logo + Navigation -->
+        <div class="footer-top">
+        <div class="footer-logo">
+            <img src="assets/Africana (1).png" alt="Africana Ultimate Solutions Logo" />
+            <h3>Africana Ultimate <br> Solutions</h3>
+        </div>
+
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div>
+
+        <hr class="footer-divider" />
+
+        <!-- Newsletter Section -->
+        <div class="footer-newsletter">
+        <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your Email" required />
+            <button type="submit">
+            <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </form>
+        </div>
+
+
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+        <p>© Africana Ultimate Solution 2025</p>
+        </div>
+    </div>
+    </footer>
+
+<script src="main.js"></script>
+</body>
+</html>
