@@ -173,12 +173,27 @@ body{
 .mobile-menu{
   display:none;
   background:#fff;
-  border-top:1px solid rgba(0,0,0,0.04);
+  border-top:1px solid rgba(0,0,0,0.1);
 }
 .mobile-menu nav{ padding:16px 20px; }
 .mobile-menu ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px }
 .mobile-menu a{ text-decoration:none; color:var(--dark); font-weight:500; padding:8px 4px; display:inline-block }
-.mobile-cta{ margin-top:12px; width:100%; text-align:center }
+.mobile-cta{ margin-top:12px; width:100%; text-align:center; color: var(--bg);}
+
+/* Ensure mobile CTA is visible (white text) and uses the green brand color */
+.mobile-menu .mobile-cta{
+  color: #fff !important;
+  background: var(--green) !important;
+  border: 2px solid var(--green) !important;
+  padding: 12px 0 !important;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* give the mobile menu some depth when open */
+.mobile-menu{
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px){
