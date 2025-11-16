@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read detailed blog posts from Africana Ultimate Solutions on business consulting, digital transformation, and enterprise solutions.">
+  <meta name="keywords" content="blog, consulting insights, business articles, digital transformation">
+  <meta name="author" content="Africana Ultimate Solutions">
+  <meta name="robots" content="index, follow">
+  <title>Blog Details - Africana Ultimate Solutions</title>
+  <link rel="canonical" href="https://africanaultimatesolutions.com/blog-details.html">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/Africana (1).png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+   
+    .blog-details-container {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 40px 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .blog-details-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .blog-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    .blog-meta {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .blog-meta-tag {
+      background: #f0f0f0;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #2b7238;
+      font-weight: 600;
+    }
+
+    .blog-content p {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 25px;
+      background: #2b7238;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .back-btn:hover {
+      background: #f5b841;
+      color: #000;
+    }
+
+    .error-message {
+      padding: 20px;
+      background: #fee;
+      border: 1px solid #fcc;
+      border-radius: 8px;
+      color: #c00;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .loading-message {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .blog-details-container {
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      .blog-title {
+        font-size: 1.8rem;
+      }
+
+      .blog-details-image {
+        height: 250px;
+      }
+
+      .blog-content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <!-- Replace with your actual logo image -->
+        <img src="assets/Africana (1).png" alt="Africana Ultimate Solutions logo" class="logo" />
+        <span class="brand-text">
+          <strong>Africana Ultimate</strong><br/><small>Solutions</small>
+        </span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <div class="header-cta">
+        <a href="contact.html" class="btn btn-outline">Book a Consultation</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button class="nav-toggle" id="navToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu (hidden on desktop) -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <nav>
+        <ul>
+          <li><a href="index.html" class="mobile-link">Home</a></li>
+          <li><a href="about.html" class="mobile-link">About</a></li>
+          <li><a href="services.html" class="mobile-link">Services</a></li>
+          <li><a href="blog.html" class="mobile-link">Blog</a></li>
+          <li><a href="contact.html" class="mobile-link">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-solid mobile-cta">Book a Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="blog-details-container">
+    <div id="loadingState" class="loading-message">
+      <p>Loading blog post...</p>
+    </div>
+
+    <div id="blogDetailsContent" style="display: none;">
+      <img id="blogImage" class="blog-details-image" src="" alt="Blog Image">
+
+      <h1 id="blogTitle" class="blog-title"></h1>
+
+      <div id="blogMeta" class="blog-meta"></div>
+
+      <div id="blogContent" class="blog-content"></div>
+
+      <a href="blog.html" class="back-btn">← Back to Blog</a>
+    </div>
+
+    <div id="errorState" style="display: none;">
+      <div class="error-message">
+        <p>Unable to load blog post. Please try again.</p>
+        <a href="blog.html" class="back-btn" style="display: inline-block; margin-top: 15px;">Back to Blog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIREBASE SDK + BLOG DETAILS SCRIPT -->
+  <script type="module">
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCAuU-GLuR8Ehm2YgyfWmdkJdmim_xcEF4",
+      authDomain: "africana-ultimate-solution.firebaseapp.com",
+      projectId: "africana-ultimate-solution",
+      storageBucket: "africana-ultimate-solution.firebasestorage.app",
+      messagingSenderId: "708518879022",
+      appId: "1:708518879022:web:14d0da2cb031c5fff1a4bf"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Get blog ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const blogId = urlParams.get("id");
+
+    console.log("Blog ID from URL:", blogId);
+
+    if (!blogId) {
+      console.error("No blog ID provided in URL");
+      document.getElementById("loadingState").style.display = "none";
+      document.getElementById("errorState").style.display = "block";
+    } else {
+      // Fetch blog details
+      async function loadBlog() {
+        try {
+          console.log("Fetching blog with ID:", blogId);
+          const docRef = doc(db, "blogs", blogId);
+          const docSnap = await getDoc(docRef);
+
+          if (!docSnap.exists()) {
+            console.error("Blog document does not exist");
+            document.getElementById("loadingState").style.display = "none";
+            document.getElementById("errorState").style.display = "block";
+            return;
+          }
+
+          const blog = docSnap.data();
+          console.log("Blog data loaded:", blog);
+
+          // Populate the page
+          document.getElementById("blogTitle").textContent = blog.title || "Untitled";
+          document.getElementById("blogImage").src = blog.imageUrl || "assets/placeholder.jpg";
+          document.getElementById("blogImage").alt = blog.title || "Blog Image";
+
+          // Format date
+          if (blog.date) {
+            const date = new Date(blog.date);
+            const dateStr = date.toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            });
+            const categoryTag = blog.category ? `<span class="blog-meta-tag">${blog.category}</span>` : "";
+            document.getElementById("blogMeta").innerHTML = 
+              `${categoryTag}<span>${dateStr}</span>`;
+          }
+
+          // Format content - split by paragraphs and create proper HTML
+          if (blog.content) {
+            const paragraphs = blog.content
+              .split("\n\n")
+              .filter(p => p.trim())
+              .map(p => `<p>${p.trim()}</p>`)
+              .join("");
+            document.getElementById("blogContent").innerHTML = paragraphs;
+          }
+
+          // Show content, hide loading state
+          document.getElementById("loadingState").style.display = "none";
+          document.getElementById("blogDetailsContent").style.display = "block";
+
+        } catch (error) {
+          console.error("Error loading blog:", error.message, error);
+          document.getElementById("loadingState").style.display = "none";
+          document.getElementById("errorState").style.display = "block";
+        }
+      }
+
+      loadBlog();
+    }
+  </script>
+
+</body>
+</html>
