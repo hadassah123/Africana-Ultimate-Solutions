@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form-notifications.css">
     <!-- favicon for browser tabs -->
     <link rel="icon" href="assets/Africana (1).png" type="image/png">
     <!-- Schema.org Service Schema -->
@@ -211,7 +212,7 @@
         <div class="contact-grid">
         <!-- Left: contact form -->
         <div class="contact-form">
-    <form id="contactForm" action="#" method="post" novalidate>
+    <form id="contactForm" action="contact-form.php" method="post" novalidate>
         <div class="form-group">
         <label for="fullname">Full Name</label>
         <input type="text" name="fullname" id="fullname" placeholder="e.g Jane Doe" required />
@@ -306,5 +307,6 @@
     </footer>
 
 <script src="main.js"></script>
+<script src="form-handler.js"></script>
 </body>
 </html>

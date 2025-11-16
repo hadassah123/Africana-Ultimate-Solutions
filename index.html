@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form-notifications.css">
     <link rel="icon" href="assets/Africana (1).png" type="image/png">
     <!-- Schema.org Organization Structured Data -->
     <script type="application/ld+json">
@@ -293,7 +294,7 @@
     <div class="contact-grid">
       <!-- Left: contact form -->
       <div class="contact-form">
-  <form id="contactForm" action="#" method="post" novalidate>
+  <form id="contactForm" action="contact-form.php" method="post" novalidate>
     <div class="form-group">
       <label for="fullname">Full Name</label>
       <input type="text" name="fullname" id="fullname" placeholder="e.g Jane Doe" required />
@@ -333,7 +334,7 @@
         <p><a href="tel:+2347043018282" style="color:inherit; text-decoration:underline;">+234 704 301 8282</a></p>
 
         <h3 style="margin-top:22px;">Email Us:</h3>
-        <p><a href="mailto:info@africanaultimate.com" style="color:inherit; text-decoration:underline;">info@africanaultimate.com</a></p>
+        <p><a href="mailto:info@africanaultimatesolutions.com" style="color:inherit; text-decoration:underline;">info@africanaultimate.com</a></p>
 
         <h3 style="margin-top:22px;">Follow Us:</h3>
         <p class="social-icons" style="margin-top:8px;">
@@ -387,11 +388,8 @@
   </div>
 </footer>
 
-<!-- Firebase initialized in firebase-config.js -->
-<script type="module" src="firebase-config.js"></script>
-<script type="module" src="contact-form.js"></script>
-
 <script src="main.js"></script>
+<script src="form-handler.js"></script>
 
 </body>
 </html>
