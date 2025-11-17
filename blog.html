@@ -224,64 +224,6 @@
     </div>
   </div>
 </footer>
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyCAuU-GLuR8Ehm2YgyfWmdkJdmim_xcEF4",
-    authDomain: "africana-ultimate-solution.firebaseapp.com",
-    projectId: "africana-ultimate-solution",
-    storageBucket: "africana-ultimate-solution.firebasestorage.app",
-    messagingSenderId: "708518879022",
-    appId: "1:708518879022:web:14d0da2cb031c5fff1a4bf"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// Display blogs
-async function loadBlogs() {
-    try {
-        const querySnapshot = await getDocs(collection(db, "blogs"));
-        const blogContainer = document.querySelector(".blogpage-article") || document.querySelector(".blog-grid-container");
-
-        if (!blogContainer) {
-            console.error("Blog container not found");
-            return;
-        }
-
-        console.log("Found", querySnapshot.docs.length, "blogs");
-
-        querySnapshot.forEach((doc) => {
-            const blog = doc.data();
-            console.log("Blog:", blog.title, "ID:", doc.id);
-
-            const content = blog.content || blog.description || "";
-            const excerpt = content.substring(0, 150).trim() + "...";
-
-            let html = `
-                <div class="blog-card">
-                    <img src="${blog.imageUrl || 'assets/placeholder.jpg'}" alt="${blog.title}">
-                    <div class="blog-card-content">
-                        <span class="blog-category">${blog.category || 'General'}</span>
-                        <h3>${blog.title || 'Untitled'}</h3>
-                        <p>${excerpt}</p>
-                        <a href="blog-details.html?id=${doc.id}" class="read-more-link">Read More</a>
-                    </div>
-                </div>
-            `;
-
-            blogContainer.innerHTML += html;
-        });
-    } catch (error) {
-        console.error("Error loading blogs:", error);
-    }
-}
-
-loadBlogs();
-</script>
 <script src="main.js"></script>
 </body>
 </html>
