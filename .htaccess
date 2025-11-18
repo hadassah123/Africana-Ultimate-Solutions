@@ -22,6 +22,12 @@
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Prevent Clickjacking
+    Header set X-Frame-Options "DENY"
+    
+    # Content Security Policy
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.firebaseio.com https://*.firestore.googleapis.com https://cors-anywhere.herokuapp.com"
 </IfModule>
 
 # Remove ETags for better caching
@@ -37,7 +43,15 @@ FileETag None
 Options -Indexes
 
 # Disable access to sensitive files
-<FilesMatch "\.(env|json|lock|md)$">
+<FilesMatch "\.(env|json|lock|md|php)$">
     Order allow,deny
     Deny from all
 </FilesMatch>
+
+# Prevent hotlinking of images
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_REFERER} !^https?://([^/]+\.)?africanaultimatesolutions\.com [NC]
+    RewriteCond %{HTTP_REFERER} !^$
+    RewriteRule \.(jpg|jpeg|png|gif|css|js)$ - [F,NC]
+</IfModule>
