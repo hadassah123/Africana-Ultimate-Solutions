@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for Brand, Niche & Thrive - The Rise and Thrive Agenda event by Africana Ultimate Solutions">
+    <meta name="title" content="Event Registration - Africana Ultimate Solutions">
+    <title>Event Registration - Africana Ultimate Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form-notifications.css">
+    <link rel="icon" href="assets/Africana (1).png" type="image/png">
+    <style>
+        .registration-hero {
+            background: linear-gradient(135deg, #2b7238 0%, #1f5428 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .registration-hero h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .event-details-box {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px auto;
+            max-width: 600px;
+            border-left: 5px solid #2b7238;
+        }
+
+        .event-details-box h2 {
+            color: #2b7238;
+            margin-top: 0;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        .detail-item i {
+            color: #2b7238;
+            width: 30px;
+            font-size: 20px;
+        }
+
+        .registration-form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .registration-form-container h2 {
+            text-align: center;
+            color: #2b7238;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2b7238;
+            box-shadow: 0 0 0 3px rgba(43, 114, 56, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .submit-btn {
+            background: #2b7238;
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #1f5428;
+        }
+
+        .register-success {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .flyer-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .flyer-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="assets/Africana (1).png" alt="Africana Ultimate Solutions logo" class="logo" data-no-animate />
+                <span class="brand-text">
+                    <strong>Africana Ultimate</strong><br/><small>Solutions</small>
+                </span>
+            </a>
+
+            <nav class="main-nav" aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" id="navToggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="mobile-link">Home</a></li>
+                    <li><a href="about.html" class="mobile-link">About</a></li>
+                    <li><a href="services.html" class="mobile-link">Services</a></li>
+                    <li><a href="blog.html" class="mobile-link">Blog</a></li>
+                    <li><a href="contact.html" class="mobile-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="registration-hero">
+        <h1>Event Registration</h1>
+        <p>Secure your spot at our upcoming event</p>
+    </section>
+
+    <!-- Event Flyer -->
+    <div class="flyer-image">
+        <img src="assets/event.jpeg" alt="Brand, Niche & Thrive - Event Flyer" />
+    </div>
+
+    <!-- Event Details -->
+    <div class="event-details-box">
+        <h2>Brand, Niche, Thrive: The Rise & Shine Agenda</h2>
+        
+        <div class="detail-item">
+            <i class="fas fa-calendar"></i>
+            <span><strong>Date:</strong> Friday, 17th April, 2026</span>
+        </div>
+        <div class="detail-item">
+            <i class="fas fa-clock"></i>
+            <span><strong>Time:</strong> 10am – 1pm</span>
+        </div>
+        <div class="detail-item">
+            <i class="fas fa-location-dot"></i>
+            <span><strong>Venue:</strong> To be confirmed upon registration</span>
+        </div>
+        <div class="detail-item">
+            <i class="fas fa-naira-sign"></i>
+            <span><strong>Fee:</strong> ₦10,000</span>
+        </div>
+
+        <p style="margin-top: 25px; line-height: 1.6; color: #333;">
+            Join us for an immersive experience of interactive sessions exploring your unique value proposition, owning your niche, and achieving your goals. Network with like-minded professionals and take a significant step towards thriving in your career.
+        </p>
+
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+            <p style="margin: 8px 0; font-size: 14px; color: #666;">
+                <strong>Powered by:</strong> Africana Ultimate Global Solutions
+            </p>
+            <p style="margin: 8px 0; font-style: italic; color: #2b7238; font-weight: 600;">
+                Let's rise and shine together!
+            </p>
+        </div>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="registration-form-container">
+        <div class="register-success" id="successMessage">
+            <h3>✓ Registration Successful!</h3>
+            <p>Thank you for registering. We'll send confirmation details to your email shortly.</p>
+        </div>
+
+        <h2>Complete Your Registration</h2>
+        <form id="registrationForm" method="POST" action="#">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+234 xxx xxx xxxx" required />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="organization">Organization/School</label>
+                    <input type="text" id="organization" name="organization" placeholder="Your organization name" />
+                </div>
+
+                <div class="form-group">
+                    <label for="position">Position/Role</label>
+                    <input type="text" id="position" name="position" placeholder="Your position" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="specialty">Area of Speciality *</label>
+                <select id="specialty" name="specialty" required>
+                    <option value="">-- Select your area --</option>
+                    <option value="education">Education</option>
+                    <option value="business">Business</option>
+                    <option value="consulting">Consulting</option>
+                    <option value="coaching">Coaching & Mentoring</option>
+                    <option value="leadership">Leadership Development</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Additional Comments</label>
+                <textarea id="message" name="message" placeholder="Any questions or comments?" rows="4"></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 30px;">
+                <label style="display: flex; align-items: center; font-weight: 400;">
+                    <input type="checkbox" id="terms" name="terms" required style="width: auto; margin-right: 10px;" />
+                    I agree to receive event updates and communications
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">Complete Registration</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="assets/Africana (1).png" alt="Africana Ultimate Solutions Logo" data-no-animate />
+                    <h3>Africana Ultimate <br> Solutions</h3>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <hr class="footer-divider" />
+
+            <div class="footer-newsletter">
+                <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your Email" required />
+                    <button type="submit">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© Africana Ultimate Solution 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+        // Firebase config
+        const firebaseConfig = {
+            apiKey: "AIzaSyCAuU-GLuR8Ehm2YgyfWmdkJdmim_xcEF4",
+            authDomain: "africana-ultimate-solution.firebaseapp.com",
+            projectId: "africana-ultimate-solution",
+            storageBucket: "africana-ultimate-solution.firebasestorage.app",
+            messagingSenderId: "708518879022",
+            appId: "1:708518879022:web:14d0da2cb031c5fff1a4bf",
+            measurementId: "G-3DVDXYW3PB"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const organization = document.getElementById('organization').value;
+            const position = document.getElementById('position').value;
+            const specialty = document.getElementById('specialty').value;
+            const message = document.getElementById('message').value;
+
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Registering...';
+            submitBtn.disabled = true;
+
+            try {
+                // Add registration to Firestore
+                const docRef = await addDoc(collection(db, "event_registrations"), {
+                    fullName: fullName,
+                    email: email,
+                    phone: phone,
+                    organization: organization,
+                    position: position,
+                    specialty: specialty,
+                    message: message,
+                    eventName: "Brand, Niche, Thrive: The Rise & Shine Agenda",
+                    eventDate: "2026-04-17",
+                    timestamp: serverTimestamp()
+                });
+
+                console.log("Registration saved with ID: ", docRef.id);
+
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Reset form
+                this.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+
+            } catch (error) {
+                console.error("Error saving registration: ", error);
+                alert('Error registering. Please try again. Error: ' + error.message);
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (navToggle && mobileMenu) {
+            navToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', navToggle.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+                mobileMenu.setAttribute('aria-hidden', mobileMenu.getAttribute('aria-hidden') === 'true' ? 'false' : 'true');
+            });
+        }
+    </script>
+
+    <script src="scroll-animations.js"></script>
+</body>
+</html>
