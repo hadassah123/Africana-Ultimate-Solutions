@@ -54,3 +54,25 @@ This project was built to:
 	•	Designed with a brand-focused color palette
 	•	Structured for scalability (can integrate backend later)
 	•	Optimized for user engagement and conversions
+🔧 How to Run Locally
+Clone the repository:
+git clone https://github.com/hadassah123/Africana-website.git
+Open the folder:
+cd Africana-website
+Run the project:
+Open index.html in your browser
+
+🌐 Live Demo
+https://africanaultimateasolutions.com/
+
+📈 Future Improvements
+🔌 Backend integration (Firebase / Node.js)
+💳 Payment integration for services
+📝 CMS integration for blog (e.g. Sanity or WordPress headless)
+📊 Analytics tracking
+📬 Email automation system
+
+👩🏽‍💻 Author
+Hadassah Ekanem
+Software Engineer | Tech Instructor | UI/UX Designer
+GitHub: https://github.com/hadassah123
