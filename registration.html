@@ -144,6 +144,88 @@
             border-radius: 10px;
             max-height: 300px;
         }
+
+        /* Payment Section Styles */
+        .payment-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .bank-transfer-section {
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+            }
+            to {
+                opacity: 1;
+                max-height: 1000px;
+                overflow: visible;
+            }
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            border: 2px dashed #2b7238;
+            border-radius: 8px;
+            background: #f0f8f3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input-wrapper:hover {
+            border-color: #1f5428;
+            background: #e8f5e9;
+        }
+
+        .file-input-wrapper.drag-over {
+            border-color: #1f5428;
+            background: #c8e6c9;
+        }
+
+        .file-input-wrapper input[type="file"] {
+            display: none;
+        }
+
+        .file-input-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #2b7238;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .file-input-label i {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #2b7238;
+        }
+
+        .file-name {
+            display: block;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .file-name.success {
+            color: #2b7238;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -286,6 +368,53 @@
                 <textarea id="message" name="message" placeholder="Any questions or comments?" rows="4"></textarea>
             </div>
 
+            <!-- Payment Method Section -->
+            <div class="payment-section">
+                <h3 style="color: #2b7238; margin-top: 30px; margin-bottom: 15px;">Payment Details - Bank Transfer</h3>
+                
+                <!-- Bank Transfer Details -->
+                <div id="bankTransferSection" class="bank-transfer-section">
+                    <div style="background: #f0f8f3; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #2b7238;">
+                        <p style="margin: 0; color: #333; font-size: 14px;">
+                            <strong>Bank Details:</strong><br>
+                            Account Name: Africana Ultimate Global Solutions<br>
+                            Account Number: 0123456789 (Update this with your actual account)<br>
+                            Bank Name: [Your Bank Name]<br>
+                            Sort Code: [Your Sort Code]
+                        </p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bankName">Bank Name *</label>
+                            <input type="text" id="bankName" name="bankName" placeholder="e.g., First Bank, GTBank" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transactionRef">Transaction Reference *</label>
+                            <input type="text" id="transactionRef" name="transactionRef" placeholder="Your transaction reference number" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amountPaid">Amount Paid (₦) *</label>
+                        <input type="number" id="amountPaid" name="amountPaid" placeholder="10000" min="0" step="100" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentProof">Payment Proof (Receipt/Screenshot) *</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="paymentProof" name="paymentProof" accept="image/*,.pdf" />
+                            <span class="file-input-label">
+                                <i class="fas fa-cloud-arrow-up"></i>
+                                Click to upload or drag and drop (JPG, PNG, PDF)
+                            </span>
+                            <span class="file-name" id="fileName"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="form-group" style="margin-bottom: 30px;">
                 <label style="display: flex; align-items: center; font-weight: 400;">
                     <input type="checkbox" id="terms" name="terms" required style="width: auto; margin-right: 10px;" />
@@ -337,6 +466,7 @@
         // Import Firebase modules
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
 
         // Firebase config
         const firebaseConfig = {
@@ -352,6 +482,56 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
+        const storage = getStorage(app);
+
+        // Bank transfer payment is the only method
+
+        // File input handling
+        const fileInput = document.getElementById('paymentProof');
+        const fileInputWrapper = document.querySelector('.file-input-wrapper');
+        const fileNameDisplay = document.getElementById('fileName');
+
+        // Click to upload
+        fileInputWrapper.addEventListener('click', () => fileInput.click());
+
+        // File selected
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                const file = e.target.files[0];
+                displayFileName(file);
+            }
+        });
+
+        // Drag and drop
+        fileInputWrapper.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            fileInputWrapper.classList.add('drag-over');
+        });
+
+        fileInputWrapper.addEventListener('dragleave', () => {
+            fileInputWrapper.classList.remove('drag-over');
+        });
+
+        fileInputWrapper.addEventListener('drop', (e) => {
+            e.preventDefault();
+            fileInputWrapper.classList.remove('drag-over');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                displayFileName(files[0]);
+            }
+        });
+
+        function displayFileName(file) {
+            if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                fileNameDisplay.textContent = 'File too large (max 5MB)';
+                fileNameDisplay.classList.remove('success');
+                fileInput.value = '';
+                return;
+            }
+            fileNameDisplay.textContent = '✓ ' + file.name + ' (' + (file.size / 1024).toFixed(2) + ' KB)';
+            fileNameDisplay.classList.add('success');
+        }
 
         // Handle form submission
         document.getElementById('registrationForm').addEventListener('submit', async function(e) {
@@ -372,6 +552,39 @@
             submitBtn.disabled = true;
 
             try {
+                // Collect bank transfer payment details and upload file
+                const bankName = document.getElementById('bankName').value;
+                const transactionRef = document.getElementById('transactionRef').value;
+                const amountPaid = document.getElementById('amountPaid').value;
+                const paymentProof = document.getElementById('paymentProof').files[0];
+
+                if (!bankName || !transactionRef || !amountPaid || !paymentProof) {
+                    alert('Please fill in all payment details and upload proof.');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    return;
+                }
+
+                // Upload payment proof to Firebase Storage
+                const fileName = `payments/${email}_${Date.now()}_${paymentProof.name}`;
+                const storageRef = ref(storage, fileName);
+                
+                submitBtn.textContent = 'Uploading proof...';
+                await uploadBytes(storageRef, paymentProof);
+                const proofURL = await getDownloadURL(storageRef);
+
+                submitBtn.textContent = 'Saving registration...';
+
+                const paymentData = {
+                    method: 'bank_transfer',
+                    bankName: bankName,
+                    transactionRef: transactionRef,
+                    amountPaid: parseFloat(amountPaid),
+                    paymentProofUrl: proofURL,
+                    paymentProofFileName: paymentProof.name,
+                    proofUploadedAt: serverTimestamp()
+                };
+
                 // Add registration to Firestore
                 const docRef = await addDoc(collection(db, "event_registrations"), {
                     fullName: fullName,
@@ -381,8 +594,10 @@
                     position: position,
                     specialty: specialty,
                     message: message,
+                    paymentDetails: paymentData,
                     eventName: "Brand, Niche, Thrive: The Rise & Shine Agenda",
                     eventDate: "2026-04-17",
+                    registrationStatus: 'pending_verification',
                     timestamp: serverTimestamp()
                 });
 
@@ -393,6 +608,8 @@
                 
                 // Reset form
                 this.reset();
+                fileNameDisplay.textContent = '';
+                fileNameDisplay.classList.remove('success');
 
                 // Hide success message after 5 seconds
                 setTimeout(() => {
